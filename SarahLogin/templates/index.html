@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+  </head>
+  <body>
+    <h1>Welcome to the Website!</h1>
+    <div class="box">
+      <h3>Member Login</h3>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form class="login" action="/login" method="post">
+        <ul>
+          <li>Email:  <input type="text" name="email"></li><br>
+          <li>Password:  <input type="text" name="password"></li><br>
+          <button type="submit" name="login">Submit</button>
+        </ul>
+      </form>
+    </div>
+    <div class="box">
+      <h3>New Member? Register below</h3>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form class="register" action="/success" method="post">
+        <ul>
+          <li>First Name:  <input type="text" name="first_name"></li><br>
+          <li>Last Name:  <input type="text" name="last_name"></li><br>
+          <li>Email:  <input type="text" name="email"></li><br>
+          <li>Password:  <input type="text" name="password"></li><br>
+          <li>Password Confirmation:  <input type="text" name="passwordc"></li><br>
+          <button type="submit" name="register">Register</button>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>
